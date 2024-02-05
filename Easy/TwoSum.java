@@ -12,7 +12,8 @@ public class TwoSum {
         
         for(int i=0; i<nums.length;i++){
 
-            for(int j= i+1; j<nums.length; j++)
+            for(int j= i+1; j<nums.length; j++) //ayuda a evitar duplicados y simplifica el proceso de búsqueda de pares únicos de índices en el arreglo
+                                                //aumenta para seguir comparando
             {
                 if( nums[i]+nums[j]== target){
                     result[0]= i;
