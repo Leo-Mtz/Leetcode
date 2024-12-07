@@ -1,17 +1,23 @@
 import java.util.*;
 
+
+//Time complexity: O(n^2)
+
+//Space Complexity: O(n^2)
+//The resulting list of lists is where our space complexity comes from  
+
 class Solution {
     public List<List<Integer>> generate(int numRows) {
         // Initialize the result list to store all rows of Pascal's Triangle
         List<List<Integer>> result = new ArrayList<>();
         
         // Iterate through each row
-        for (int i = 0; i < numRows; i++) {
+        for (int i = 0; i < numRows; i++) { // ->O(n)
             // Create a new list for the current row, starting with 1
             List<Integer> list = new ArrayList<>(Arrays.asList(1)); 
             
             // Fill in the middle elements by summing two adjacent elements from the previous row
-            for (int j = 1; j < i; j++) {
+            for (int j = 1; j < i; j++) { // ->O(n)
                 List<Integer> prev = result.get(i - 1); 
                 list.add(prev.get(j - 1) + prev.get(j));
             }
